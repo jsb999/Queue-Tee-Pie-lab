@@ -4,11 +4,43 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // create cuties
+        Puppy puppy = new Puppy();
+        Kitty kitty = new Kitty();
+        PygmyMarmoset pygmyMarmoset = new PygmyMarmoset();
+
+        // create queue
+        QueueTees queue = new QueueTees(3);
+
+        // enqueue cuties
+        queue.enqueue(puppy);
+        queue.enqueue(kitty);
+        queue.enqueue(pygmyMarmoset);
+
+        System.out.println(queue.size());
+
+         // dequeue cuties
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        
+        System.out.println(queue.size());
     }
+}
+
+
+class Puppy implements Cutie {
+    public String description() { return "A small excited puppy"; }
+    public Integer cutenessRating() { return 10; }
+}
+
+class Kitty implements Cutie {
+    public String description() { return "A fluffy kitten"; }
+    public Integer cutenessRating() { return 9; }
+}
+
+class PygmyMarmoset implements Cutie {
+    public String description() { return "A tiny pygmy marmoset"; }
+    public Integer cutenessRating() { return 10; }
 }
