@@ -3,7 +3,7 @@
  */
 package org.example;
 
-public class Main{
+public class App{
     public static void main(String[] args) {
         // create cuties
         Puppy puppy = new Puppy();
@@ -28,7 +28,6 @@ public class Main{
         System.out.println(queue.size());
     }
 }
-
 
 class Puppy implements Cutie {
     public String description() { return "A small excited puppy"; }
